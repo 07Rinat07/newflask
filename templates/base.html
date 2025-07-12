@@ -10,8 +10,9 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="container">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+<div class="page">
+     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
           <img class="header__img" src="{{ url_for('static', filename='img/7.png') }}" alt="king">
       </a>
@@ -27,8 +28,17 @@
         <button type="button" class="btn btn-primary">ЗАРЕГИСТРИРОВАТЬСЯ</button>
       </div>
     </header>
-  </header>
     {% block body %}{% endblock %}
+
+ <footer class="d-flex flex-wrap align-items-center justify-content-md-between py-3 my-4 border-top">
+     <div class="col-md-4 d-flex align-items-center">
+     <span class="nb-3 ne-2 nb-nd-0 text-noted "> 2025 Коммерческая тайна</span>
+            </div>
+         <a href="#" class="mb-3 ne-2 nb-nd-0 text-noted text-decoration-none lh-1">
+             <img class="footer__img" src="{{ url_for('static', filename='img/tg.png') }}" alt="telegram">
+         </a>
+    </footer>
 </div>
+
 </body>
 </html>
