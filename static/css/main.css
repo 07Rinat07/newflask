@@ -17,7 +17,7 @@ main {
 /* Убираем sticky у футера */
 footer {
     padding: 10px;
-    background: #fff;
+    background: #00FFFF;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -37,6 +37,6 @@ header {
     top: 0;
     padding: 10px;
     z-index: 1000;
-    background: #fff;
+    background: #00FFFF;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
