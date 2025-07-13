@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug.utils import redirect
+
 
 app = Flask(__name__)  # ✅ создаем ОДИН раз!
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newflask.db'
@@ -12,11 +12,19 @@ class Post(db.Model):  # type: ignore
     title = db.Column(db.String(300), nullable=False)
     text = db.Column(db.Text, nullable=False)
 
+
 # ----- Роуты -----
 @app.route("/index")
 @app.route("/")
 def index():
     return render_template('index.html')
+
+
+
+@app.route("/posts")
+def posts():
+    posts = Post.query.all()
+    return render_template('posts.html', posts=posts)
 
 
 @app.route("/create", methods=['POST', 'GET'])
@@ -30,6 +38,7 @@ def create():
         try:
             db.session.add(post)
             db.session.commit()
+            from werkzeug.utils import redirect
             return redirect('/')
         except:
             return 'При добавлении записи произошла ошибка!'
@@ -37,9 +46,9 @@ def create():
         return render_template('create.html')
 
 
-@app.route("/about")
-def about():
-    return render_template('about.html')
+# @app.route("/about")
+# def about():
+#    return render_template('about.html')
 
 
 # ----- Запуск -----
