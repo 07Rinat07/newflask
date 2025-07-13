@@ -6,9 +6,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///newflask.db'
 
 db = SQLAlchemy(app)
 
+app = Flask(__name__)  # 👈 static автоматически = ./static/
 
-
-class Post(db.Model):
+class Post(db.Model):  # type: ignore
     id = db.Column(db.Integer, primary_key=True)
     title= db.Column(db.String(300), nullable=False)
     text= db.Column(db.Text, nullable=False)
@@ -17,6 +17,11 @@ class Post(db.Model):
 @app.route("/")
 def index():
     return render_template('index.html')
+
+
+@app.route("/create")
+def create():
+        return render_template('create.html')
 
 
 

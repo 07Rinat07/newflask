@@ -1,33 +1,42 @@
-/* HEADER */
-.header__img{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Убираем sticky у футера */
+footer {
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Остальные стили */
+.header__img {
     height: 60px;
     width: 60px;
 }
 
-
-/* закрепляю хедеер к верху */
-header{
-  position: sticky;
-    top: 0;
-    padding: 10px;
-    z-index: 1000;
-    background: #fff;
-    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* FOOTER */
-.footer__img{
+.footer__img {
     height: 50px;
     width: 50px;
 }
 
-footer{
-  position: sticky;
-    top: 50;
+header {
+    position: sticky;
+    top: 0;
     padding: 10px;
     z-index: 1000;
     background: #fff;
-    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
 }
